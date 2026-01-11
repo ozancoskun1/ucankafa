@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <title>UÇAN KAFA </title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <link rel="icon" type="image/png" href="img/icon.png" />
+  <link rel="icon" type="image/png" href="icon.png" />
   <style>
     :root {
       --vh: 1vh;
@@ -174,7 +174,7 @@
     }
 
     /* BUTONLAR */
-   #startButton {
+    #startButton {
       padding: 11px 22px;
       font-size: 17px;
       /* BAŞLIK İLE AYNI GRADIENT */
@@ -434,56 +434,56 @@
     <div class="birds">
       <!-- 1. SATIR -->
       <div class="birds-row">
-        <div class="item selected" data-src="img/ronaldo.png">
-          <img src="img/ronaldo.png" />
+        <div class="item selected" data-src="ronaldo.png">
+          <img src="ronaldo.png" />
           <div class="label">Penaldo</div>
         </div>
-        <div class="item locked" data-src="img/rafasilva.png">
-          <img src="img/rafasilva.png" />
+        <div class="item locked" data-src="rafasilva.png">
+          <img src="rafasilva.png" />
           <div class="label">Rafarejma</div>
         </div>
-        <div class="item locked" data-src="img/icardi.png">
-          <img src="img/icardi.png" />
+        <div class="item locked" data-src="icardi.png">
+          <img src="icardi.png" />
           <div class="label">Picardi</div>
         </div>
       </div>
       <!-- 2. SATIR -->
       <div class="birds-row">
-        <div class="item locked" data-src="img/messi.png">
-          <img src="img/messi.png" />
+        <div class="item locked" data-src="messi.png">
+          <img src="messi.png" />
           <div class="label">Pessi</div>
         </div>
-        <div class="item locked" data-src="img/alex.png">
-          <img src="img/alex.png" />
+        <div class="item locked" data-src="alex.png">
+          <img src="alex.png" />
           <div class="label">Alex de S</div>
         </div>
-        <div class="item locked" data-src="img/quaresma.png">
-          <img src="img/quaresma.png" />
+        <div class="item locked" data-src="quaresma.png">
+          <img src="quaresma.png" />
           <div class="label">Qarizma 7</div>
         </div>
       </div>
       <!-- 3. SATIR -->
       <div class="birds-row">
-        <div class="item locked" data-src="img/muslera.png">
-          <img src="img/muslera.png" />
+        <div class="item locked" data-src="muslera.png">
+          <img src="muslera.png" />
           <div class="label">Taze Gol</div>
         </div>
-        <div class="item locked" data-src="img/osimhen.png">
-          <img src="img/osimhen.png" />
+        <div class="item locked" data-src="osimhen.png">
+          <img src="osimhen.png" />
           <div class="label">Osi</div>
         </div>
       </div>
     </div>
 
     <div class="maps">
-      <div class="item selected" data-src="img/sokakfutbolu.png">
-        <img src="img/sokakfutbolu.png" />
+      <div class="item selected" data-src="sokakfutbolu.png">
+        <img src="sokakfutbolu.png" />
       </div>
-      <div class="item locked" data-src="img/halisaha.png">
-        <img src="img/halisaha.png" />
+      <div class="item locked" data-src="halisaha.png">
+        <img src="halisaha.png" />
       </div>
-      <div class="item locked" data-src="img/stadyum.png">
-        <img src="img/stadyum.png" />
+      <div class="item locked" data-src="stadyum.png">
+        <img src="stadyum.png" />
       </div>
     </div>
 
@@ -497,7 +497,6 @@
 
 <div id="scoreboard">
   <div id="highscore">En Yüksek Skor: 0</div>
-
   <div id="score">Skor: 0</div>
 </div>
 
@@ -523,9 +522,7 @@
 
 <script>
   // === BACKEND AYARI ===
-
   const API_BASE_URL = "https://ucankafabackend-production.up.railway.app";
-
 
   // MOBİLDE GERÇEK 100vh AYARI
   function setViewport() {
@@ -548,7 +545,6 @@
   const infoBox = document.getElementById("infoBox");
   const title = document.getElementById("title");
 
-
   const leaderboardButton = document.getElementById("leaderboardButton");
   const leaderboardPanel = document.getElementById("leaderboardPanel");
   const leaderboardList = document.getElementById("leaderboardList");
@@ -557,10 +553,8 @@
 
   canvas.style.display = "none";
 
-
-
-  let selectedBird = "img/ronaldo.png";
-  let selectedMap = "img/sokakfutbolu.png";
+  let selectedBird = "ronaldo.png";
+  let selectedMap = "sokakfutbolu.png";
 
   let birdY = canvas.height / 2;
   let velocity = 0;
@@ -699,14 +693,14 @@
   function updateSelections() {
     document.querySelectorAll(".birds .item").forEach((item) => {
       const src = item.getAttribute("data-src");
-      const unlocked = src === "img/ronaldo.png" || unlocks[src];
+      const unlocked = src === "ronaldo.png" || unlocks[src];
       item.classList.toggle("locked", !unlocked);
       item.classList.toggle("selected", selectedBird === src);
     });
 
     document.querySelectorAll(".maps .item").forEach((item) => {
       const src = item.getAttribute("data-src");
-      const unlocked = src === "img/sokakfutbolu.png" || unlocks[src];
+      const unlocked = src === "sokakfutbolu.png" || unlocks[src];
       item.classList.toggle("locked", !unlocked);
       item.classList.toggle("selected", selectedMap === src);
     });
